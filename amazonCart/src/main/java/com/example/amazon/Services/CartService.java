@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import com.example.amazon.Entity.CartModel;
 import com.example.amazon.Entity.ProductModel;
+import com.example.amazon.Entity.CartDetails;
 import com.example.amazon.Services.AmazonProductProxy;
 
 import com.example.amazon.Repository.CartRepository;
@@ -26,12 +27,21 @@ public class CartService {
     public void removeItemFromCartService(CartModel cart ){
         cartRepository.delete(cart);
     }
-    public void displayAllProductsInCart(UUID userId){
+    public CartDetails displayAllProductsInCart(UUID userId){
+        CartDetails cartDetails = new CartDetails();
+        cartDetails.setUserId(userId);
+
        ArrayList<CartModel> cartList =  cartRepository.findAllByUserId(userId);
+       ArrayList<ProductModel> productList = new ArrayList<ProductModel>();
 
        fro(int i = 0; i < cartList.size(); i++){
            ProductModel product = amazonProductProxy.getProductById(cartList.get(i).getProductId());
+           productList.add(product );
         }
+
+        cartDetails.setList(productList);
+
+       return cartDetails;
     }
 
     }

@@ -3,6 +3,7 @@ package com.example.amazon.Controller;
 import java.util.UUID;
 
 import com.example.amazon.Entity.CartModel;
+import com.example.amazon.Entity.CartDetails;
 import com.example.amazon.Services.CartService;
 import com.example.amazon.Repository.CartRepository;
 
@@ -47,8 +48,8 @@ CartService cartService;
     }
 
     @GetMapping("/show/{userId}")
-    public void showItems(@PathVariable("userId") UUID userId) {
-        cartService.displayAllProductsInCart(userId);
+    public CartDetails showItems(@PathVariable("userId") UUID userId) {
+      return  cartService.displayAllProductsInCart(userId);
     }
 
 

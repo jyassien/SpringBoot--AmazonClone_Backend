@@ -10,6 +10,6 @@ import com.example.amazon.Entity.ProductModel;
 @FeignClient(name="amazon-product", url="localhost:8082")
 public interface AmazonProductProxy{
 
-    @GetMapping("/search/{productId}")
+    @GetMapping("/amazon/product/search/{productId}")
     public ProductModel getProductById(@PathVariable UUID productId);
 }
