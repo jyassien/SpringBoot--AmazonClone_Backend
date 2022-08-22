@@ -1,13 +1,14 @@
-package com.example.amazonCart;
+package com.example.amazon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AmazonCartApplication {
+public class AmazonApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AmazonCartApplication.class, args);
+		SpringApplication.run(AmazonApplication.class, args);
+		System.out.println("AmazonCart App is up, and running.");
 	}
 
 }

@@ -1,10 +1,10 @@
-package com.example.amazonCart;
+package com.example.amazon;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AmazonCartApplicationTests {
+class AmazonApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,21 +1,17 @@
-package com.example.amazonCart.Service;
+package com.example.amazon.Services;
 
 import java.util.UUID;
 
-import org.springframework.stereotype.Service;
+import com.example.amazon.Entity.CartModel;
+import com.example.amazon.Repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.example.amazonCart.Entity.CartModel;
-import com.example.amazonCart.Repository.CartRepository;
+import org.springframework.stereotype.Service;
 
 @Service
 public class CartService {
-    @Autowired(required=false)
+
+    @Autowired
     CartRepository cartRepository;
-//    private final CartRepository cartRepository;
-//    public CartService(final CartRepository cartRepository){
-//        this.cartRepository = cartRepository;
-//    }
 
     public void addItemToCartService(CartModel cart ){
         cartRepository.save(cart);
@@ -24,4 +20,6 @@ public class CartService {
         cartRepository.delete(cart);
     }
     public void displayAllProductsInCart(UUID userId){}
-}
+
+    }
+

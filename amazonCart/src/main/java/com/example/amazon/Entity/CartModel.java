@@ -1,4 +1,4 @@
-package com.example.amazonCart.Entity;
+package com.example.amazon.Entity;
 
 import java.util.UUID;
 

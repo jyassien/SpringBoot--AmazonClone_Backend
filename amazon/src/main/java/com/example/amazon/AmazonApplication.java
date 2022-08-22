@@ -8,7 +8,7 @@ public class AmazonApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AmazonApplication.class, args);
-		System.out.println("Main App is, up and running.");
+		System.out.println("Main App is up, and running.");
 	}
 
 }
